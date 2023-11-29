@@ -80,8 +80,8 @@ const categories = ["All", ...new Set(guides.map((guide) => guide.category))]
     @apply text-white bg-black dark:text-black dark:bg-white;
   }
   .guides-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-top: 30px;
   }
@@ -92,5 +92,20 @@ const categories = ["All", ...new Set(guides.map((guide) => guide.category))]
 
   :global(.dark .guides-list .docs-item) {
     @apply bg-dark-normal;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .guides-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 50em) {
+    .category-picker .item {
+      height: 36px;
+      padding: 0px 20px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
   }
 </style>
