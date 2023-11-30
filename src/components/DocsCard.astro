@@ -21,11 +21,7 @@ const { title, avatar, author, date, publishedTo, url, category } = Astro.props 
   </div>
   <div class="docs-info-box">
     <div class="left-side">
-      <img
-        class="author-avator"
-        src="https://pbs.twimg.com/profile_images/1067581658314895360/zduUfOmg_400x400.jpg"
-        alt={title}
-      />
+      <img class="author-avator" src={avatar} alt={title} />
       <div>
         <div class="author">{author}</div>
         <div>{date}</div>
