@@ -71,8 +71,8 @@ const docsList = {
       <p class="category">Featured</p>
       <div class="featured-list">
         {
-          docsList.featured.map(({ title, avatar, author, date, publish, link }) => (
-            <DocsCard title={title} avatar={avatar} author={author} date={date} publish={publish} link={link} />
+          docsList.featured.map(({ title, avatar, author, date, publish, url }) => (
+            <DocsCard title={title} avatar={avatar} author={author} date={date} publishedTo={publish} url={url} />
           ))
         }
       </div>
@@ -82,8 +82,8 @@ const docsList = {
       <p class="category">Latest</p>
       <div class="latest-list">
         {
-          docsList.latest.map(({ title, avatar, author, date, publish, link }) => (
-            <DocsCard title={title} avatar={avatar} author={author} date={date} publish={publish} link={link} />
+          docsList.latest.map(({ title, avatar, author, date, publish, url }) => (
+            <DocsCard title={title} avatar={avatar} author={author} date={date} publishedTo={publish} url={url} />
           ))
         }
       </div>

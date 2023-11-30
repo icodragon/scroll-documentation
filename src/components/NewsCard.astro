@@ -13,7 +13,7 @@ const { cover, title, domain, link } = Astro.props as Props
  */
 ---
 
-<div class="news-item">
+<div class="news-item" onclick={`window.location.href = "${link}"`}>
   <img class="news-item-cover" src={cover} />
   <p class="news-item-title">{title}</p>
   <a class="news-item-link" href={link}>
@@ -26,6 +26,12 @@ const { cover, title, domain, link } = Astro.props as Props
 
 <style>
   .news-item {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .news-item:hover {
+    transform: scale(1.01);
   }
 
   .news-item-cover {

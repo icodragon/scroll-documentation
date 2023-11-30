@@ -17,14 +17,14 @@ const categories = ["All", ...new Set(guides.map((guide) => guide.category))]
   </ul>
   <div class="guides-list" id="guides-list">
     {
-      guides.map(({ title, avatar, author, date, publishedTo, link, category }) => (
+      guides.map(({ title, avatar, author, date, publishedTo, url, category }) => (
         <DocsCard
           title={title}
           avatar={avatar}
           author={author}
           date={date}
-          publish={publishedTo}
-          link={link}
+          publishedTo={publishedTo}
+          url={url}
           category={category}
         />
       ))

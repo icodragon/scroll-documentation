@@ -5,14 +5,14 @@ export type Props = {
   avatar: string
   author: string
   date: string
-  publish: string
-  link: string
+  publishedTo: string
+  url: string
   category?: string
 }
-const { title, avatar, author, date, publish, link, category } = Astro.props as Props
+const { title, avatar, author, date, publishedTo, url, category } = Astro.props as Props
 ---
 
-<a class="docs-item" href={link} data-category={category}>
+<a class="docs-item" href={url} data-category={category}>
   <div class="docs-item-title">
     <span class="link-icon inline-block w-[1.5rem] h-[1.5rem] text-black dark:text-white">
       <Fragment set:html={LinkSvg} />
@@ -33,7 +33,7 @@ const { title, avatar, author, date, publish, link, category } = Astro.props as 
     </div>
     <div class="right-side">
       Published to <br />
-      {publish}
+      {publishedTo}
     </div>
   </div>
 </a>
@@ -48,6 +48,13 @@ const { title, avatar, author, date, publish, link, category } = Astro.props as 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .docs-item:hover {
+    /* transform: scale(1.01); */
+    @apply bg-normal dark:bg-dark-highlight;
   }
 
   .docs-item-title {
